@@ -10,7 +10,7 @@ function parse_pgn_as_json(isAnnotated) {
         event: "",
         site: "",
         date: "",
-        round: "",
+        round: "?",
         white: "",
         black: "",
         result: "",
@@ -145,7 +145,9 @@ function parse_result(result) {
     var scores = result.split("-");
     if (typeof scores[1] === "undefined") {
         scores.push("");
-        throw "Invalid PGN detected";
+        if (scores[0] != "*") {
+            throw "Invalid PGN detected";
+        }
     }
     return {
         white: scores[0],
