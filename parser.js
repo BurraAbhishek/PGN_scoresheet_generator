@@ -10,7 +10,7 @@ function parse_pgn_as_json(isAnnotated) {
         event: "",
         site: "",
         date: "",
-        round: "0",
+        round: "",
         white: "",
         black: "",
         result: "",
