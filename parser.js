@@ -141,6 +141,7 @@ function parse_result(result) {
     var scores = result.split("-");
     if (typeof scores[1] === "undefined") {
         scores.push("");
+        throw "Invalid PGN detected";
     }
     return {
         white: scores[0],
@@ -183,6 +184,9 @@ function parse_pgn(isAnnotated) {
             document.getElementById("scoresheet_pages").style.display = "block";
         } else {
             // Mobile
+            if (data["result"].length < 1) {
+                throw "Invalid PGN detected";
+            }
             document
                 .getElementById("data-site-mobile")
                 .appendChild(document.createTextNode(data["site"]));
