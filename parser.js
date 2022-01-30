@@ -61,9 +61,9 @@ function move_numbering(s) {
 }
 
 function remove_marks(move) {
-    move = move.replaceAll("?", "");
-    move = move.replaceAll("!", "");
-    return move;
+    move_noqmarks = move.replaceAll("?", "");
+    move_noemarks = move_noqmarks.replaceAll("!", "");
+    return move_noemarks;
 }
 
 function parse_moves(move_list, isAnnotated) {
