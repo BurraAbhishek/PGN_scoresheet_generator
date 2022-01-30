@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+        <title>Chess PGN Scoresheet Generator</title>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <script src="render_scoresheet.js"></script>
+        <script src="render_scoresheet_mobile.js"></script>
+        <script src="parser.js"></script>
+        <script>
+            function show_source_code() {
+                window.open(
+                    "https://github.com/BurraAbhishek/PGN_scoresheet_generator"
+                );
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="paper" id="input_page">
+            <h2>Enter PGN Text:</h2>
+            <textarea id="target_pgn"></textarea>
+            <button class="check-text" onclick="javascript:parse_pgn(false);">
+                GENERATE SCORESHEET
+            </button>
+            <button class="check-text" onclick="javascript:parse_pgn(true);">
+                GENERATE ANNOTATED SCORESHEET
+            </button>
+            <button class="check-text" onclick="javascript:show_source_code();">
+                SOURCE CODE AND PRIVACY
+            </button>
+        </div>
+        <div id="scoresheet_pages">
+            <div class="paper scoresheet_page" id="score-first-page">
+                <h1>Score Sheet</h1>
+                <table class="settings_table fixed-table">
+                    <tr>
+                        <th colspan="2">Site:</th>
+                        <td colspan="2" id="data-site"></td>
+                    </tr>
+                    <tr>
+                        <th>Round:</th>
+                        <td id="data-round"></td>
+                        <th>Date:</th>
+                        <td id="data-date"></td>
+                    </tr>
+                </table>
+                <table class="settings_table fixed-table">
+                    <tr>
+                        <th>White</th>
+                        <th colspan="2">Result</th>
+                        <th>Black</th>
+                    </tr>
+                    <tr>
+                        <td id="data-white"></td>
+                        <td id="data-result-white"></td>
+                        <td id="data-result-black"></td>
+                        <td id="data-black"></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="scoresheet"></div>
+        </div>
+        <div class="paper scoresheet_page" id="scoresheet_pages_mobile">
+            <div id="score-first-page-mobile">
+                <h1>Score Sheet</h1>
+                <table class="settings_table fixed-table">
+                    <tr>
+                        <th>Site:</th>
+                        <td id="data-site-mobile"></td>
+                    </tr>
+                    <tr>
+                        <th>Round:</th>
+                        <td id="data-round-mobile"></td>
+                    </tr>
+                    <tr>
+                        <th>Date:</th>
+                        <td id="data-date-mobile"></td>
+                    </tr>
+                    <tr>
+                        <th>White</th>
+                        <td id="data-white-mobile"></td>
+                    </tr>
+                    <tr>
+                        <th>Black</th>
+                        <td id="data-black-mobile"></td>
+                    </tr>
+                    <tr>
+                        <th>Result</th>
+                        <td id="data-result-mobile"></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="scoresheet-mobile"></div>
+        </div>
+    </body>
+</html>
