@@ -131,11 +131,17 @@ function parse_moves(move_list, isAnnotated) {
         }
     }
     moves.push(movesPlayed);
+    if (moves[0][0] == "undefined") {
+        throw "Invalid PGN detected";
+    }
     return moves;
 }
 
 function parse_result(result) {
     var scores = result.split("-");
+    if (typeof scores[1] === "undefined") {
+        scores.push("");
+    }
     return {
         white: scores[0],
         black: scores[1],
