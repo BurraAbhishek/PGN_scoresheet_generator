@@ -3,7 +3,7 @@ This website generates scoresheets using [PGN files](https://en.wikipedia.org/wi
 
 ## Features:
 - Can render scoresheets in annotated form or as it is.
-- Can parse PGN files from some of the best chess websites, including [chess.com](https://www.chess.com) and [lichess.org](https://lichess.org).
+- Can parse PGN files from some of the best chess websites, including [chess.com](https://www.chess.com) and [lichess.org](https://lichess.org), and online chess databases, including [chessgames.com](https://www.chessgames.com/).
 
 ## Usage:
 - Copy the PGN text from the file to the text box, and select one of the two options to generate the scoresheet.
