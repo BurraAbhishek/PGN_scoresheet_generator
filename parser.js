@@ -70,7 +70,15 @@ function remove_marks(move) {
     return move_noannotates;
 }
 
-function parse_moves(move_list, isAnnotated) {
+function parse_moves(move_list_old, isAnnotated) {
+    move_list = "";
+    for (var i = 0; i < move_list_old.length; i++) {
+        if (move_list_old[i] == ".") {
+            move_list += ". ";
+        } else {
+            move_list += move_list_old[i];
+        }
+    }
     move_list_partial_cleaned = "";
     move_list_cleaned = "";
     isrecorded = 0;
